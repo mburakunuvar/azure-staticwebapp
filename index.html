@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy to Azure Static Web Apps - Step by Step Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Deploy Your Web App to Azure Static Web Apps</h1>
+            <p class="subtitle">A comprehensive step-by-step guide to get your static web application live on Azure</p>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>What is Azure Static Web Apps?</h2>
+                <p>Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a code repository. It's perfect for static sites, SPAs, and JAMstack applications.</p>
+            </section>
+
+            <section class="steps">
+                <h2>Deployment Steps</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>Azure account (free tier available)</li>
+                            <li>GitHub account</li>
+                            <li>Your web application code ready</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Prepare Your Repository</h3>
+                        <ul>
+                            <li>Push your code to a GitHub repository</li>
+                            <li>Ensure your main files (index.html, etc.) are in the root or a specific folder</li>
+                            <li>Make sure your repository is public or you have appropriate permissions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Create Static Web App in Azure</h3>
+                        <ul>
+                            <li>Go to the <a href="https://portal.azure.com" target="_blank">Azure Portal</a></li>
+                            <li>Click "Create a resource"</li>
+                            <li>Search for "Static Web Apps" and select it</li>
+                            <li>Click "Create"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Configure Your Static Web App</h3>
+                        <ul>
+                            <li><strong>Subscription:</strong> Select your Azure subscription</li>
+                            <li><strong>Resource Group:</strong> Create new or select existing</li>
+                            <li><strong>Name:</strong> Give your app a unique name</li>
+                            <li><strong>Plan type:</strong> Choose Free for development</li>
+                            <li><strong>Region:</strong> Select the closest region to your users</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Connect to GitHub</h3>
+                        <ul>
+                            <li>Click "Sign in with GitHub" and authorize Azure</li>
+                            <li><strong>Organization:</strong> Select your GitHub username/organization</li>
+                            <li><strong>Repository:</strong> Choose your repository</li>
+                            <li><strong>Branch:</strong> Select the branch to deploy (usually main/master)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Set Build Details</h3>
+                        <ul>
+                            <li><strong>Build Presets:</strong> Select your framework (e.g., Custom, React, Angular, Vue)</li>
+                            <li><strong>App location:</strong> Path to your app code (usually "/" or "/src")</li>
+                            <li><strong>API location:</strong> Leave empty for static sites</li>
+                            <li><strong>Output location:</strong> Build output folder (e.g., "dist", "build", or "/" for static HTML)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>Review and Create</h3>
+                        <ul>
+                            <li>Review all your settings</li>
+                            <li>Click "Review + create"</li>
+                            <li>Click "Create" to deploy your Static Web App</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>Automatic Deployment</h3>
+                        <ul>
+                            <li>Azure automatically creates a GitHub Action workflow</li>
+                            <li>The deployment process starts automatically</li>
+                            <li>Monitor progress in the GitHub Actions tab</li>
+                            <li>Deployment typically takes 2-5 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">9</div>
+                    <div class="step-content">
+                        <h3>Access Your Live Site</h3>
+                        <ul>
+                            <li>Go to your Static Web App resource in Azure Portal</li>
+                            <li>Copy the URL from the "Overview" section</li>
+                            <li>Your site is now live and accessible worldwide!</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tips">
+                <h2>💡 Pro Tips</h2>
+                <div class="tip-grid">
+                    <div class="tip">
+                        <h4>Custom Domains</h4>
+                        <p>Add your own domain in the "Custom domains" section of your Static Web App.</p>
+                    </div>
+                    <div class="tip">
+                        <h4>Automatic Updates</h4>
+                        <p>Every push to your connected branch triggers an automatic redeployment.</p>
+                    </div>
+                    <div class="tip">
+                        <h4>Staging Environments</h4>
+                        <p>Pull requests automatically create staging environments for testing.</p>
+                    </div>
+                    <div class="tip">
+                        <h4>Free SSL</h4>
+                        <p>HTTPS is automatically enabled for all Static Web Apps at no extra cost.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="troubleshooting">
+                <h2>🔧 Troubleshooting</h2>
+                <div class="troubleshoot-item">
+                    <h4>Build Failed?</h4>
+                    <p>Check the GitHub Actions logs for detailed error messages. Ensure your build commands and output location are correct.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h4>404 Errors?</h4>
+                    <p>Verify your app location and output location settings. For SPAs, you may need to configure fallback routes.</p>
+                </div>
+                <div class="troubleshoot-item">
+                    <h4>Deployment Stuck?</h4>
+                    <p>Check if your repository permissions are correct and the GitHub integration is properly authorized.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🌟 Ready to deploy? <a href="https://portal.azure.com" target="_blank">Get started with Azure Static Web Apps</a></p>
+        </footer>
+    </div>
+</body>
+</html>
